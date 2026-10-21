@@ -1,0 +1,13 @@
+shard-spec: "0.4.0"
+shard: "@nuucognition/brief"
+id: 8e1c5bb2-f592-4982-9cd3-dd161bf4da1c
+source:
+  id: 5954e79c-e752-4cd1-8482-86515e289895
+version: "0.1.1"
+name: Brief
+shorthand: brf
+description: "Explanatory HTML pages (Briefs) of technical work: collect the facts, write a typed spec, render one full-width page in the NUU Cognition styles, and check it"
+dependencies:
+  "@nuucognition/flint": ""
+folders:
+  - Media/Briefs

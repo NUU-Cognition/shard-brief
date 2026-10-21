@@ -1,0 +1,118 @@
+/* Brief — the NUU Cognition tokens.
+   Copied from the NUU design standard (Repos/main/packages/ui), so that a Brief opens as one raw file with no build:
+   - src/styles/draft.css: the shadcn tokens, the radius scale, the fonts, the brand, the Four Elements, the extended palette
+   - src/components/*.tsx: the values that the Tailwind classes of the standard components give (see page.css)
+   The NUU apps use the standard components, not Chisel (components/chisel, styles/chisel.css), so a Brief has no Chisel token.
+   The fonts are in fonts.css. When the standard changes, change this file and render each Brief again. */
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.22 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-active: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+
+  --brand: #3D6A9A;
+  --brand-foreground: #ffffff;
+  --brand-text: #2A4F72;
+
+  /* The Four Elements and the extended palette: main, accent (deep), bg (pale wash), bg2 (pale), text (dark), faint. */
+  --water: #5B93C7; --water-accent: #3D6A9A; --water-bg: #EBF2F9; --water-bg2: #D5E4F0; --water-text: #2A4F72; --water-faint: #9FBDD5;
+  --fire: #C4736E; --fire-accent: #8B4A46; --fire-bg: #F9EDEC; --fire-bg2: #F0D8D5; --fire-text: #7A3836; --fire-faint: #D8ADA8;
+  --earth: #6A9E76; --earth-accent: #4A7A58; --earth-bg: #ECF5EE; --earth-bg2: #D5E8D8; --earth-text: #3A5C42; --earth-faint: #A0C4A6;
+  --air: #8A9AB5; --air-accent: #6878A0; --air-bg: #EFF2F7; --air-bg2: #DFE4EE; --air-text: #3E4C68; --air-faint: #B8C2D5;
+  --sun: #F3C969; --sun-accent: #B9851A; --sun-bg: #FCF4DA; --sun-bg2: #F8E9B5; --sun-text: #7A4B08; --sun-faint: #E8D89A;
+  --moon: #A8B4BC; --moon-accent: #76838C; --moon-bg: #F2F4F6; --moon-bg2: #E0E5E9; --moon-text: #4A555C; --moon-faint: #C8CFD4;
+  --ember: #D08A52; --ember-accent: #94602C; --ember-bg: #FAEFE0; --ember-bg2: #F2DCBE; --ember-text: #6E4824; --ember-faint: #E2B388;
+  --bloom: #C8839C; --bloom-accent: #92516B; --bloom-bg: #F8EBEF; --bloom-bg2: #F0D5DC; --bloom-text: #6E384E; --bloom-faint: #DEB1BD;
+  --forest: #5A9C8B; --forest-accent: #3A7060; --forest-bg: #E8F2EE; --forest-bg2: #CBE2D9; --forest-text: #275244; --forest-faint: #94C2B6;
+  --ocean: #1B8C9C; --ocean-accent: #0F5F6E; --ocean-bg: #DAEDF0; --ocean-bg2: #A6D2DA; --ocean-text: #073640; --ocean-faint: #6FB1BC;
+  --storm: #9C7AB4; --storm-accent: #6E4D88; --storm-bg: #F1EBF6; --storm-bg2: #DDD0E8; --storm-text: #4D335C; --storm-faint: #C0AAD2;
+  --stone: #B0A488; --stone-accent: #7E725A; --stone-bg: #F4F1E9; --stone-bg2: #E5DDC9; --stone-text: #564C36; --stone-faint: #CDC5B0;
+
+  /* The radius scale (radix-mira). */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+
+  /* The fonts: Inter for the body, Geist for the headings, Geist Mono for code. */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* The text scale of Tailwind (text-xs, text-sm, text-base, text-lg). */
+  --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem; --text-lg: 1.125rem;
+
+  /* The ring of card.tsx and popover.tsx: ring-1 ring-foreground/10. The standard components have no drop shadow. */
+  --ring-card: 0 0 0 1px color-mix(in oklab, var(--foreground) 10%, transparent);
+
+  color-scheme: light;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.82 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-active: oklch(0.30 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+
+  --brand: #78B0DA;
+  --brand-foreground: #ffffff;
+  --brand-text: #A0CCE5;
+
+  --water: #78B0DA; --water-accent: #5888B2; --water-bg: #182530; --water-bg2: #203040; --water-text: #A0CCE5; --water-faint: #4A7898;
+  --fire: #DA908A; --fire-accent: #A86862; --fire-bg: #2A1E1C; --fire-bg2: #382824; --fire-text: #E8B5B0; --fire-faint: #A06058;
+  --earth: #88BE92; --earth-accent: #5E9A6C; --earth-bg: #1A2520; --earth-bg2: #223028; --earth-text: #A0D0A8; --earth-faint: #5A8E62;
+  --air: #9AAAC5; --air-accent: #7088B0; --air-bg: #1A1C22; --air-bg2: #222838; --air-text: #B0C0D8; --air-faint: #586880;
+  --sun: #FFD978; --sun-accent: #D6A348; --sun-bg: #2C2515; --sun-bg2: #3C321E; --sun-text: #F8DDA0; --sun-faint: #8E7438;
+  --moon: #C0CCD4; --moon-accent: #8E9AA4; --moon-bg: #1C1F22; --moon-bg2: #262A2E; --moon-text: #D4DCE2; --moon-faint: #5E686E;
+  --ember: #E2A876; --ember-accent: #B07A48; --ember-bg: #2C1E12; --ember-bg2: #3C2A1C; --ember-text: #F0CCA8; --ember-faint: #8E6038;
+  --bloom: #DAA0B6; --bloom-accent: #AC7286; --bloom-bg: #2A1C24; --bloom-bg2: #382630; --bloom-text: #ECC4D2; --bloom-faint: #8E5C72;
+  --forest: #7AB8A8; --forest-accent: #4E8C7C; --forest-bg: #182824; --forest-bg2: #213430; --forest-text: #A2D4C6; --forest-faint: #406E60;
+  --ocean: #5EC0CE; --ocean-accent: #3A8E9C; --ocean-bg: #0E2528; --ocean-bg2: #163338; --ocean-text: #A4DCE5; --ocean-faint: #3A6E7A;
+  --storm: #BA9CD0; --storm-accent: #8E72A6; --storm-bg: #221C2A; --storm-bg2: #2E2638; --storm-text: #D8C4E8; --storm-faint: #6E5688;
+  --stone: #C8BCA0; --stone-accent: #968870; --stone-bg: #221E14; --stone-bg2: #302A20; --stone-text: #DCD2BA; --stone-faint: #706648;
+
+  color-scheme: dark;
+}
+
+/* The tone of a status: one element for each meaning, the same on every Brief.
+   A badge of an element is bg + text + a faint border (badge.tsx). */
+.tone-earth { --tone: var(--earth); --tone-bg: var(--earth-bg); --tone-bg2: var(--earth-bg2); --tone-text: var(--earth-text); --tone-faint: var(--earth-faint); }
+.tone-sun   { --tone: var(--sun-accent); --tone-bg: var(--sun-bg); --tone-bg2: var(--sun-bg2); --tone-text: var(--sun-text); --tone-faint: var(--sun-faint); }
+.tone-fire  { --tone: var(--fire); --tone-bg: var(--fire-bg); --tone-bg2: var(--fire-bg2); --tone-text: var(--fire-text); --tone-faint: var(--fire-faint); }
+.tone-water { --tone: var(--water); --tone-bg: var(--water-bg); --tone-bg2: var(--water-bg2); --tone-text: var(--water-text); --tone-faint: var(--water-faint); }
+.tone-air   { --tone: var(--air); --tone-bg: var(--air-bg); --tone-bg2: var(--air-bg2); --tone-text: var(--air-text); --tone-faint: var(--air-faint); }
+.tone-moon  { --tone: var(--moon-accent); --tone-bg: var(--moon-bg); --tone-bg2: var(--moon-bg2); --tone-text: var(--moon-text); --tone-faint: var(--moon-faint); }
+.tone-storm { --tone: var(--storm); --tone-bg: var(--storm-bg); --tone-bg2: var(--storm-bg2); --tone-text: var(--storm-text); --tone-faint: var(--storm-faint); }
+.tone-ocean { --tone: var(--ocean); --tone-bg: var(--ocean-bg); --tone-bg2: var(--ocean-bg2); --tone-text: var(--ocean-text); --tone-faint: var(--ocean-faint); }
